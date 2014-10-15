@@ -7,11 +7,21 @@
 				<a href="<c:url value="/"/>"><img src="<c:url value="/recursos/images/logotipo.png"/>" /></a>
 			</h1>
 		</div>
+		
+		<div class="four columns" style="margin-top: 1.0em;">
+			<div class="row">
+				<input type="submit" name="j_teste" value="teste" class="tiny button success">
+				<input type="text" name="j_teste_txt" placeholder="teste" class="three columns right"/>
+			</div>
+		</div>
+		
+		
 		<div class="five columns right">
 			
 			<sec:authorize access="isAnonymous()">
 			
 			<form style="margin-top: 1.0em;" action="<c:url value="/j_spring_security_check"/>" method="post">
+			
 				<div class="row">
 					<input type="text" name="j_username" placeholder="Usu&aacute;rio" class="three columns right"/>
 					<input type="password" name="j_password" placeholder="Senha" class="three columns right"/>
