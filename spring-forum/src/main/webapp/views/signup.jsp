@@ -5,7 +5,7 @@
 	<div class="four columns">
 		<h4>Bem vindo(a) ao Spring F&oacute;rum</h4>
 		<p>Esperamos poder lhe ajudar a dominar o m&aacute;ximo poss&iacute;vel todos os conceitos por tr&aacute;s do Spring Framework e seus projetos relacionados</p>
-	</div>
+	</div>	
 	<div class="eight columns">
 	<sf:form modelAttribute="usuario" action="executarRegistro" enctype="multipart/form-data">
 		<label for="nome">Nome:<sf:errors path="nome" cssClass="erro"/></label>

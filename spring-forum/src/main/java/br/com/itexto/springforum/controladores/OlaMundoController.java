@@ -8,12 +8,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class OlaMundoController {
-	
-	@RequestMapping("/ola")
-	public ModelAndView olaMundo() {
-		ModelAndView resultado = new ModelAndView("mundo");
-		resultado.addObject("data", new Date());
-		return resultado;
-	}
-	
+
+    @RequestMapping("/ola")
+    public ModelAndView olaMundo() {
+        ModelAndView resultado = new ModelAndView("mundo");
+        resultado.addObject("data", new Date());
+        return resultado;
+    }
+
 }

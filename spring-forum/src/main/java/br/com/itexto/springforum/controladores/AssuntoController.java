@@ -11,21 +11,22 @@ import br.com.itexto.springforum.entidades.Assunto;
 
 @Controller
 public class AssuntoController {
-	@Autowired
-	private DAOAssunto daoAssunto;
-	
-	@Autowired
-	private DAOTopico daoTopico;
-	
-	@RequestMapping("/assunto/{id}")
-	public ModelAndView show(Long id) {
-		ModelAndView resultado = new ModelAndView();
-		
-		resultado.addObject("assunto", daoAssunto.get(id));
-		resultado.addObject("topicos", daoTopico.getTopicosPorAssunto((Assunto)resultado.getModel().get("assunto"), 0, 20));
-		resultado.setViewName("assunto/show");
-		
-		return resultado;
-	}
-	
+    @Autowired
+    private DAOAssunto daoAssunto;
+
+    @Autowired
+    private DAOTopico daoTopico;
+
+    @RequestMapping("/assunto/{id}")
+    public ModelAndView show(Long id) {
+        ModelAndView resultado = new ModelAndView();
+
+        resultado.addObject("assunto", daoAssunto.get(id));
+        resultado.addObject("topicos",
+                daoTopico.getTopicosPorAssunto((Assunto) resultado.getModel().get("assunto"), 0, 20));
+        resultado.setViewName("assunto/show");
+
+        return resultado;
+    }
+
 }

@@ -28,7 +28,7 @@
 					<input type="submit" value="Entrar" class="tiny button success" class="three columns right"/>&nbsp;
 					<a href="<c:url value='registro'/>" class="tiny button success">Registre-se</a>
 				</div>
-				
+								
 			</form>
 			
 			</sec:authorize>
