@@ -25,50 +25,10 @@ import br.com.itexto.springforum.entidades.Usuario;
 public class UsuarioController {
 
     @Autowired
-    private DAOUsuario daoUsuario;
-
-    public DAOUsuario getDaoUsuario() {
-        return daoUsuario;
-    }
-
-    public void setDaoUsuario(DAOUsuario dao) {
-        daoUsuario = dao;
-    }
-
-    @Autowired
     private DAOTopico daoTopico;
 
-    public DAOTopico getDaoTopico() {
-        return daoTopico;
-    }
-
-    public void setDaoTopico(DAOTopico dao) {
-        daoTopico = dao;
-    }
-
-    /**
-     * Exemplo de como lidar com requisições com variáveis embutidas.
-     *
-     * @param id
-     * @return
-     */
-    @RequestMapping("/usuario/show/{id}")
-    public ModelAndView usuario(@PathVariable("id") Long id) {
-        ModelAndView mav = new ModelAndView();
-        System.out.println("Vou expor o usuario");
-        Usuario usuario = getDaoUsuario().get(id);
-        System.out.println("Encontrei o usuario: " + usuario);
-        mav.getModel().put("usuario", usuario);
-        mav.setViewName("usuario/show");
-        return mav;
-    }
-
-    @RequestMapping("/usuario/autenticado")
-    public ModelAndView infoAutenticado(@ModelAttribute("usuario") Usuario usuario) {
-        ModelAndView mav = new ModelAndView("usuario/show");
-        mav.getModel().put("usuario", usuario);
-        return mav;
-    }
+    @Autowired
+    private DAOUsuario daoUsuario;
 
     @RequestMapping("/usuario/avatar/{login}")
     @ResponseBody
@@ -87,6 +47,29 @@ public class UsuarioController {
         return resultado;
     }
 
+    public DAOTopico getDaoTopico() {
+        return daoTopico;
+    }
+
+    public DAOUsuario getDaoUsuario() {
+        return daoUsuario;
+    }
+
+    @RequestMapping("/usuario/autenticado")
+    public ModelAndView infoAutenticado(@ModelAttribute("usuario") Usuario usuario) {
+        ModelAndView mav = new ModelAndView("usuario/show");
+        mav.getModel().put("usuario", usuario);
+        return mav;
+    }
+
+    public void setDaoTopico(DAOTopico dao) {
+        daoTopico = dao;
+    }
+
+    public void setDaoUsuario(DAOUsuario dao) {
+        daoUsuario = dao;
+    }
+
     @RequestMapping("/usuario/posts/{login}")
     public String topicosUsuario(@PathVariable("login") String login, Map<String, Object> model) {
         model.put("topicos", getDaoTopico().getTopicosPorAutor(getDaoUsuario().getUsuario(login)));
@@ -98,6 +81,23 @@ public class UsuarioController {
     @ResponseBody
     public List<Topico> topicosUsuarioJson(@PathVariable("login") String login) {
         return getDaoTopico().getTopicosPorAutor(getDaoUsuario().getUsuario(login));
+    }
+
+    /**
+     * Exemplo de como lidar com requisições com variáveis embutidas.
+     *
+     * @param id
+     * @return
+     */
+    @RequestMapping("/usuario/show/{id}")
+    public ModelAndView usuario(@PathVariable("id") Long id) {
+        ModelAndView mav = new ModelAndView();
+        System.out.println("Vou expor o usuario");
+        Usuario usuario = getDaoUsuario().get(id);
+        System.out.println("Encontrei o usuario: " + usuario);
+        mav.getModel().put("usuario", usuario);
+        mav.setViewName("usuario/show");
+        return mav;
     }
 
 }

@@ -25,7 +25,7 @@ public class Autenticacao {
      * de autenticação
      * Para lidar com sessões, tudo o que precisamos fazer é incluir na chamada do método um atributo do tipo
      * HttpSession.
-     * 
+     *
      * @param login
      * @param senha
      * @param model
