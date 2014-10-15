@@ -10,7 +10,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Generated;
 import org.hibernate.annotations.GenerationTime;
 
-@Entity @Table(name="assunto")
+@Entity @Table(name="spring_assunto", schema="DBA")
 public class Assunto implements Comparable, java.io.Serializable {
 	
 	@Id @Generated(GenerationTime.INSERT) 

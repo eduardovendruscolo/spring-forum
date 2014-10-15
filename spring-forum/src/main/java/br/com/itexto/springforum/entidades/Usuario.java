@@ -18,7 +18,7 @@ import org.hibernate.annotations.GenerationTime;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
-@Entity @Table(name="usuario")
+@Entity @Table(name="spring_usuario", schema="DBA")
 public class Usuario implements java.io.Serializable {
 	
 	@Id @Generated(GenerationTime.INSERT) 

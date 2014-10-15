@@ -16,7 +16,7 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.Generated;
 import org.hibernate.annotations.GenerationTime;
 
-@Entity @Table(name="topico")
+@Entity @Table(name="spring_topico", schema="DBA")
 public class Topico implements java.io.Serializable {
 	
 	@Id @Generated(GenerationTime.INSERT) 

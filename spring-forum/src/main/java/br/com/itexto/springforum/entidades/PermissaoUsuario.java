@@ -13,7 +13,7 @@ import org.hibernate.annotations.Generated;
 import org.hibernate.annotations.GenerationTime;
 import org.springframework.security.core.GrantedAuthority;
 
-@Entity @Table(name="permissao_usuario")
+@Entity @Table(name="spring_permissao_usuario", schema="DBA")
 public class PermissaoUsuario  implements GrantedAuthority, java.io.Serializable {
 	
 	@Id @Generated(GenerationTime.INSERT) 
