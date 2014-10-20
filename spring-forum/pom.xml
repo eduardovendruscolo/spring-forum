@@ -177,27 +177,22 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-taglibs</artifactId>
 			<version>${spring.security.versao}</version>
-			
+
 		</dependency>
-		
+
 		<dependency>
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
 			<version>1.6</version>
 		</dependency>
-		
+
 		<dependency>
-			<groupId>com.ibm.db2</groupId>
-			<artifactId>db2jcc4</artifactId>
-			<version>10.1</version>	
-		</dependency>		
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.3-1100-jdbc41</version>
+		</dependency>
 
 	</dependencies>
-
-
-
-
-
 
 	<build>
 		<finalName>spring-forum</finalName>
