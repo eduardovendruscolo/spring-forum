@@ -12,19 +12,10 @@ import br.com.itexto.springforum.entidades.Usuario;
 @Transactional(propagation=Propagation.SUPPORTS)
 @Repository("daoUsuario")
 public class HBUsuario extends HBDAO<Usuario> implements DAOUsuario {
-	
-	
 
-	
+	@Override
 	protected Class getClazz() {
 		return Usuario.class;
-	}
-
-	public Usuario getUsuario(String login, String senha) {
-		Query query = getSession().createQuery("from Usuario usr where usr.login = ? and usr.hashSenha = ?");
-		query.setString(0, login);
-		query.setString(1, DigestUtils.sha256Hex(senha));
-		return (Usuario) query.uniqueResult();				   
 	}
 
 	public Usuario getUsuario(String login) {
@@ -33,6 +24,13 @@ public class HBUsuario extends HBDAO<Usuario> implements DAOUsuario {
 		return (Usuario) query.uniqueResult();
 	}
 
-	
-	
+	public Usuario getUsuario(String login, String senha) {
+		Query query = getSession().createQuery("from Usuario usr where usr.login = ? and usr.hashSenha = ?");
+		query.setString(0, login);
+		query.setString(1, DigestUtils.sha256Hex(senha));
+		return (Usuario) query.uniqueResult();
+	}
+
+
+
 }
