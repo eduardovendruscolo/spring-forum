@@ -15,7 +15,6 @@
 			</div>
 		</div>
 		
-		
 		<div class="five columns right">
 			
 			<sec:authorize access="isAnonymous()">

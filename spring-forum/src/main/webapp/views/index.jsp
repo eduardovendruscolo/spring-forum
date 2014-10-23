@@ -44,7 +44,7 @@
 <div class="row">
 	<div class="six columns">
 
-		<form style="margin-top: 1.0em;" action="<c:url value="/j_spring_security_check"/>" method="post">
+		<form style="margin-top: 1.0em;" method="post">
 
 			<a href="<c:url value='novaConta'/>" class="tiny button success">Nova Conta</a>
 
