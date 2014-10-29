@@ -6,13 +6,7 @@
       <form style="margin-top: 1.0em;" method="post">
          <div class="row">
             <input type="text" name="descricaoConta" placeholder="Descrição da conta" class="tree columns right" /> 
-            <input type="number" name="valorConta" min="0.01" placeholder="0,00" class="tree columns right" />
-         </div>
-         <div class="row">
-            <input type="number" name="valorConta1" min="0.01" placeholder="0,00" class="three columns" />
-            <input type="number" name="valorConta2" min="0.01" placeholder="0,00" class="three columns"/>
-            <input type="number" name="valorConta3" min="0.01" placeholder="0,00" class="three columns"/>
-            <input type="number" name="valorConta4" min="0.01" placeholder="0,00" class="three columns"/>
+            <input type="number" name="valor" min="0.01" placeholder="0,00" class="tree columns right" />
          </div>
       </form>
    </div>
