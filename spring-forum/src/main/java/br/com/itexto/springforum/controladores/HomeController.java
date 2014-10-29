@@ -116,4 +116,10 @@ public class HomeController {
         return "registro";
     }
 
+    @RequestMapping("/novaConta")
+    public String novaConta(Map<String, Object> model) {
+        System.out.println(".......................Nova Conta");
+        return "novaConta";
+    }
+
 }

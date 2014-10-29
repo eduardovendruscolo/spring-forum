@@ -32,5 +32,9 @@
 	<definition name="loginFalho" extends="main">
 		<put-attribute name="conteudo" value="/views/loginFalho.jsp" />
 	</definition>
+	
+	<definition name="novaConta" extends="main">
+		<put-attribute name="conteudo" value="/views/novaConta.jsp" />
+	</definition>	
 
 </tiles-definitions>

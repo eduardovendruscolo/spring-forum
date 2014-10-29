@@ -47,27 +47,11 @@ public class UsuarioController {
         return resultado;
     }
 
-    public DAOTopico getDaoTopico() {
-        return daoTopico;
-    }
-
-    public DAOUsuario getDaoUsuario() {
-        return daoUsuario;
-    }
-
     @RequestMapping("/usuario/autenticado")
     public ModelAndView infoAutenticado(@ModelAttribute("usuario") Usuario usuario) {
         ModelAndView mav = new ModelAndView("usuario/show");
         mav.getModel().put("usuario", usuario);
         return mav;
-    }
-
-    public void setDaoTopico(DAOTopico dao) {
-        daoTopico = dao;
-    }
-
-    public void setDaoUsuario(DAOUsuario dao) {
-        daoUsuario = dao;
     }
 
     @RequestMapping("/usuario/posts/{login}")
@@ -100,4 +84,19 @@ public class UsuarioController {
         return mav;
     }
 
+    public DAOTopico getDaoTopico() {
+        return daoTopico;
+    }
+
+    public DAOUsuario getDaoUsuario() {
+        return daoUsuario;
+    }
+
+    public void setDaoTopico(DAOTopico dao) {
+        daoTopico = dao;
+    }
+
+    public void setDaoUsuario(DAOUsuario dao) {
+        daoUsuario = dao;
+    }
 }
