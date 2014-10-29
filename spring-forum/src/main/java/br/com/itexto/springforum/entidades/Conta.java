@@ -11,8 +11,8 @@ import org.hibernate.annotations.Generated;
 import org.hibernate.annotations.GenerationTime;
 
 @Entity
-@Table(name = "spring_conta", schema="dba")
-public class Conta {
+@Table(name = "spring_conta", schema = "dba")
+public class Conta implements Comparable<Conta>, java.io.Serializable {
 
 	@Id
 	@Generated(GenerationTime.INSERT)
@@ -50,7 +50,8 @@ public class Conta {
 		this.valor = valor;
 	}
 
-
-
+	public int compareTo(Conta o) {
+		return 0;
+	}
 
 }
